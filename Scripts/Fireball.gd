@@ -2,13 +2,21 @@ extends Area2D
 
 const SPEED =200
 var velocity = Vector2()
+var direction = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
+#tell the fireball which way to fire 
+func set_fireball_direction(dir):
+	direction = dir
+	if dir == -1:
+		$AnimatedSprite.flip_h = true
+
+#set the fly direction of the fireball
 func _physics_process(delta):
-	velocity.x = SPEED * delta
+	velocity.x = SPEED * delta * direction
 	translate(velocity)
 	$AnimatedSprite.play("shoot")
 	
