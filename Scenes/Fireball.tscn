@@ -19,7 +19,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "shoot"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -28,4 +28,5 @@ polygon = PoolVector2Array( -5.97192, -10.5297, -2.77664, -11.0806, -0.683174, -
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -1.56634, 0.284784 )
 scale = Vector2( 1.58382, 1.24207 )
+[connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
