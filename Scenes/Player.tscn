@@ -14,10 +14,24 @@
 [ext_resource path="res://Sprites/Dag/Fire0.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Dag/Fire1.png" type="Texture" id=13]
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.0
+height = 28.0
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
+"name": "Shoot",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": false,
 "name": "Run",
 "speed": 12.0
 }, {
@@ -31,29 +45,15 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Fall",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 14.0
-height = 28.0
-
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 318.96, 179.959 )
 script = ExtResource( 3 )
-
-[node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "Idle"
-playing = true
 
 [node name="StaticBody2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.32866 )
@@ -64,15 +64,20 @@ current = true
 smoothing_enabled = true
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 22.477, 8.51402 )
+position = Vector2( 35, 8.514 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="snow" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2, 0 )
+position = Vector2( 2.37735, 0.147797 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 11 )
 centered = false
-[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Run"
+frame = 5
+playing = true
