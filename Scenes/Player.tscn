@@ -14,17 +14,12 @@
 [ext_resource path="res://Sprites/Dag/Fire0.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Dag/Fire1.png" type="Texture" id=13]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 14.0
 height = 28.0
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Shoot",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jump",
@@ -57,7 +52,7 @@ script = ExtResource( 3 )
 
 [node name="StaticBody2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 3.32866 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -77,7 +72,8 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "Run"
-frame = 5
+frames = SubResource( 2 )
+animation = "Shoot"
+frame = 1
 playing = true
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
