@@ -26,14 +26,14 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ) ],
-"loop": false,
+"loop": true,
 "name": "Run",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Shoot",
-"speed": 12.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
@@ -48,6 +48,7 @@ animations = [ {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 318.96, 179.959 )
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="StaticBody2D" type="CollisionShape2D" parent="."]
@@ -73,7 +74,7 @@ centered = false
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "Shoot"
-frame = 1
+animation = "Run"
+frame = 4
 playing = true
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
