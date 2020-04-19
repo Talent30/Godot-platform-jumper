@@ -4,7 +4,7 @@ onready var Player = get_parent().get_node("Player")
 const GRAVITY = 20
 const SPEED = 180
 const FLOOR = Vector2(0,-1)
-const JUMP_HEIGHT = -550
+const JUMP_HEIGHT = -600
 var velocity = Vector2()
 
 var react_time = 300
@@ -16,7 +16,7 @@ var target_player_dist = 60
 var  direction = 1 
 var next_jump_time = -1
 var eye_reach = 90
-var vision = 200
+var vision = 300
 var is_dead = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +25,7 @@ func _ready():
 func dead():
 	is_dead = true
 	velocity = Vector2(0,0)
-	$AnimatedSprite.play("Die")
+	$AnimatedSprite.play("Dead")
 	$CollisionPolygon2D.set_deferred("disabled", true)
 	#$CollisionPolygon2D.disabled = true // does not work for 3.1
 	$Timer.start()
@@ -93,6 +93,11 @@ func _physics_process(delta):
 			velocity.y = 0
 	
 	velocity = move_and_slide(velocity, FLOOR)
+			#get collison 
+	if get_slide_count() > 0:
+		for i in range(get_slide_count()):
+			if "Player" in get_slide_collision(i).collider.name:
+				get_slide_collision(i).collider.dead()
 
 
 func _on_Timer_timeout():

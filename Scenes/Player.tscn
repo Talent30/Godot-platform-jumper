@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Sprites/Dag/Run3.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Dag/Fall0.png" type="Texture" id=2]
@@ -10,9 +10,10 @@
 [ext_resource path="res://Sprites/Dag/Run1.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Dag/Idle0.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Dag/Run0.png" type="Texture" id=10]
-[ext_resource path="res://PNG/bg_snow_b.png" type="Texture" id=11]
+[ext_resource path="res://PNG/bg_snow.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Dag/Fire0.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Dag/Fire1.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Dag/dead.png" type="Texture" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.0
@@ -44,10 +45,14 @@ animations = [ {
 "loop": true,
 "name": "Fall",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Dead",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 318.96, 179.959 )
 z_index = 1
 script = ExtResource( 3 )
 
@@ -57,24 +62,34 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1343
+limit_bottom = 350
 smoothing_enabled = true
+smoothing_speed = 10.0
+editor_draw_limits = true
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 35, 8.514 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="snow" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2.37735, 0.147797 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 11 )
-centered = false
-
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "Run"
-frame = 4
+animation = "Dead"
 playing = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 0, -360 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
