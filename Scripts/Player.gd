@@ -82,13 +82,13 @@ func _physics_process(delta):
 					$Sprite.play("Fall")
 				if friction == true:
 					motion.x = lerp(motion.x,0,0.05)
+
 		motion = move_and_slide(motion,UP)
 	else:
-		if is_on_floor():
-			$StaticBody2D.set_deferred("disabled", true)
-		else:
-			motion.y += 60
-			motion = move_and_slide(motion,UP)
+	
+		motion.y += 60
+		move_and_slide(motion,UP)
+		$StaticBody2D.set_deferred("disabled", true)
 
 
 func dead():

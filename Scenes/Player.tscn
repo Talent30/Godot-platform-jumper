@@ -15,17 +15,8 @@
 [ext_resource path="res://Sprites/Dag/Fire1.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Dag/dead.png" type="Texture" id=14]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 14.0
-height = 28.0
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Run",
@@ -46,19 +37,26 @@ animations = [ {
 "name": "Fall",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "Dead",
 "speed": 5.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.0
+height = 28.0
+
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 2
 script = ExtResource( 3 )
-
-[node name="StaticBody2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3.32866 )
-shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -74,8 +72,8 @@ editor_draw_limits = true
 position = Vector2( 35, 8.514 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "Dead"
+frames = SubResource( 1 )
+animation = "Run"
 playing = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -91,5 +89,9 @@ offset = Vector2( 0, -360 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="StaticBody2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.142395, 0.195943 )
+shape = SubResource( 2 )
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
