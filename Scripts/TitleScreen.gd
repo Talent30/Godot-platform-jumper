@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer2/TextureButton.grab_focus()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if $MarginContainer/VBoxContainer/VBoxContainer2/TextureButton.is_hovered() == true:
 		$MarginContainer/VBoxContainer/VBoxContainer2/TextureButton.grab_focus()
 	if $MarginContainer/VBoxContainer/VBoxContainer2/TextureButton2.is_hovered() == true:

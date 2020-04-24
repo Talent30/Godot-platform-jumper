@@ -17,7 +17,7 @@ var on_ground = false
 var is_dead = false
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_dead == false:
 		motion.y += GRAVITY
 		var friction = false
@@ -87,7 +87,7 @@ func _physics_process(delta):
 	else:
 	
 		motion.y += 60
-		move_and_slide(motion,UP)
+		motion = move_and_slide(motion,UP)
 		$StaticBody2D.set_deferred("disabled", true)
 
 

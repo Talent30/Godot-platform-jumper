@@ -30,7 +30,7 @@ func _showChatter():
 		self.visible_characters = drawTextSpeed
 	pass
 
-func _process(delta):
+func _process(_delta):
 	_showChatter()
 	pass
 	
