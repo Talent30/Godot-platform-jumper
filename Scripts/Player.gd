@@ -91,6 +91,7 @@ func _physics_process(_delta):
 		$StaticBody2D.set_deferred("disabled", true)
 
 
+
 func dead():
 	is_dead = true
 	$Sprite.play("Dead")
