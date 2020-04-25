@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/WorldComplete.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PNG/snow_115.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Person1.gd" type="Script" id=5]
-[ext_resource path="res://PNG/snow_113.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/StoryBox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/squat 00.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.9494
@@ -23,18 +23,18 @@ format = 1
 tile_data = PoolIntArray( 524291, 12, 0, 524296, 12, 0, 524301, 12, 0, 589824, 18, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 2031616, -1610612716, 0, 2097152, -1610612716, 0, 2097161, 0, 0, 2162688, -1610612716, 0, 2162697, -1610612716, 0, 2162698, -1610612716, 0, 2162705, -1610612716, 0, 2228224, -1610612716, 0, 2228233, -1610612716, 0, 2228234, -1610612716, 0, 2228241, -1610612716, 0, 2293760, -1610612716, 0, 2293769, -1610612716, 0, 2293770, -1610612716, 0, 2293777, -1610612716, 0, 2359296, -1610612716, 0, 2359297, 0, 0, 2359298, 0, 0, 2359299, 0, 0, 2359300, 0, 0, 2359301, 0, 0, 2359302, 0, 0, 2359303, 0, 0, 2359304, 0, 0, 2359305, 0, 0, 2359306, 0, 0, 2359307, 0, 0, 2359308, 0, 0, 2359309, 0, 0, 2359310, 0, 0, 2359311, 0, 0, 2359312, 0, 0, 2359313, 0, 0, 2359314, 0, 0, 2359315, 0, 0, 2359316, 0, 0, 2359317, 0, 0, 2359318, 0, 0, 2359319, 0, 0, 2359320, 0, 0, 2359321, 0, 0, 2359322, 0, 0, 2359323, 0, 0, 2359324, 0, 0, 2359325, 0, 0, 2424832, 20, 0, 2424833, 20, 0, 2424834, 20, 0, 2424835, 20, 0, 2424836, 20, 0, 2424837, 20, 0, 2424838, 20, 0, 2424839, 20, 0, 2424840, 20, 0, 2424841, 20, 0, 2424842, 20, 0, 2424843, 20, 0, 2424844, 20, 0, 2424845, 20, 0, 2424846, 20, 0, 2424847, 20, 0, 2424848, 20, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 96.6583, 293.343 )
+position = Vector2( 96.4643, 293.343 )
 
 [node name="Person1" type="Area2D" parent="."]
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Person1"]
-position = Vector2( 204.512, 292.859 )
-scale = Vector2( 0.5135, 0.499399 )
-texture = ExtResource( 6 )
+position = Vector2( 199.954, 290.628 )
+scale = Vector2( 2.07487, 2.3501 )
+texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Person1"]
-position = Vector2( 194.036, 288.798 )
+position = Vector2( 193.842, 288.604 )
 shape = SubResource( 1 )
 
 [node name="StoryBox" parent="Person1" instance=ExtResource( 7 )]
@@ -43,7 +43,7 @@ margin_left = -6.42352
 margin_top = 126.905
 margin_right = 444.576
 margin_bottom = 246.905
-person = ExtResource( 6 )
+person = ExtResource( 8 )
 
 [node name="WorldComplete" parent="." instance=ExtResource( 3 )]
 position = Vector2( 771.139, 255.944 )

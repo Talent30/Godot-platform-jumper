@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://PNG/snow_36.png" type="Texture" id=1]
 [ext_resource path="res://PNG/snow_09.png" type="Texture" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://PNG/snow_03.png" type="Texture" id=19]
 [ext_resource path="res://PNG/snow_74.png" type="Texture" id=20]
 [ext_resource path="res://PNG/snow_75.png" type="Texture" id=21]
+[ext_resource path="res://PNG/snow_101.png" type="Texture" id=22]
+[ext_resource path="res://PNG/snow_100.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.6708, 64.29 )
@@ -350,10 +352,25 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite7"]
+[node name="Sprite19" type="Sprite" parent="."]
+position = Vector2( 498.245, 268.189 )
+scale = Vector2( 0.248446, 0.248975 )
+texture = ExtResource( 23 )
+centered = false
+region_rect = Rect2( 1152, 768, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite7/StaticBody2D"]
-polygon = PoolVector2Array( 59.5083, 38.6343, 65.1103, 40.0319, 88.4518, 62.858, 92.1864, 74.0381, 113.661, 99.6592, 113.661, 124.349, 108.525, 128.075, 23.0955, 128.075, 17.9604, 123.883, 17.0267, 101.988, 31.9653, 79.1623, 40.8351, 74.5039, 41.3019, 55.4045, 49.7049, 42.361, 55.3068, 39.1002 )
+[node name="Sprite20" type="Sprite" parent="."]
+position = Vector2( 520.014, 189.731 )
+scale = Vector2( 0.248446, 0.248975 )
+texture = ExtResource( 22 )
+centered = false
+region_rect = Rect2( 1152, 768, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="snow_113" type="Sprite" parent="."]
 position = Vector2( 47.8159, 240.58 )

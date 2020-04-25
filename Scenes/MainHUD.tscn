@@ -12,23 +12,27 @@ script = ExtResource( 1 )
 anchor_left = -0.000329995
 anchor_right = -0.000329995
 anchor_bottom = 0.0472222
-margin_left = 0.105598
-margin_right = 57.1056
-margin_bottom = -2.0
+margin_left = 0.211197
+margin_right = 85.2112
+margin_bottom = 4.00001
 custom_fonts/font = ExtResource( 2 )
-text = "SCORE: 0"
+text = "Sscore: 0"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Lives" type="Label" parent="HUD"]
+anchor_left = -0.00163438
+anchor_top = -0.000205559
+anchor_right = -0.00163438
+anchor_bottom = -0.000205559
 margin_left = 105.046
 margin_top = 0.0740014
 margin_right = 188.046
 margin_bottom = 23.074
 custom_fonts/font = ExtResource( 2 )
-text = "Lives: 3"
+text = "Power: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

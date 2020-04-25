@@ -27,7 +27,7 @@ func _ready():
 
 
 func dead():
-	hp -= 1
+	hp -= get_node("/root/MainHUD").power
 	if hp <= 0:
 		is_dead = true
 		velocity = Vector2(0,0)
