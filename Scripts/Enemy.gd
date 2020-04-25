@@ -27,7 +27,7 @@ func _ready():
 
 
 func dead():
-	hp -= get_node("/root/MainHUD").power
+	hp -= get_node("/root/MainHUD").power + 1
 	if hp <= 0:
 		is_dead = true
 		velocity = Vector2(0,0)
@@ -88,6 +88,7 @@ func _physics_process(delta):
 				for i in range(get_slide_count()):
 					if "Player" in get_slide_collision(i).collider.name:
 						get_slide_collision(i).collider.dead()
+
 		else:
 			velocity.x = speed * direction
 		

@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/TileMap.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Moving Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PNG/snow_115.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/WorldComplete.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Pie.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3.19897, 10.7132, 0, 0, 0, 0, 2.36279, -217.996, 0, 0, 0, 0, 2.25854, -216.504, 0, 0, 0, 0, 2.25854, 11.8909 )
+}
 
 [node name="Level2" type="Node"]
 
@@ -12,17 +20,59 @@ scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 262169, 15, 0, 262170, 0, 0, 262171, 0, 0, 262172, 8, 0, 327705, 20, 0, 327706, 20, 0, 327707, 20, 0, 327708, 20, 0, 393241, 20, 0, 393242, 20, 0, 393243, 20, 0, 393244, 20, 0, 458777, 20, 0, 458778, 20, 0, 458779, 20, 0, 458780, 20, 0, 524289, 12, 0, 524313, 20, 0, 524314, 20, 0, 524315, 20, 0, 524316, 20, 0, 589849, 20, 0, 589850, 20, 0, 589851, 20, 0, 589852, 20, 0, 655360, 15, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 8, 0, 655369, 15, 0, 655370, 0, 0, 655371, 8, 0, 655385, 20, 0, 655386, 20, 0, 655387, 20, 0, 655388, 20, 0, 655391, 13, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 655399, 0, 0, 655400, 0, 0, 655401, 0, 0, 655402, 14, 0 )
+tile_data = PoolIntArray( -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -393157, 0, 0, -393156, 0, 0, -393155, 0, 0, -393154, 0, 0, -393153, 0, 0, -327634, 0, 0, -327633, 0, 0, -327632, 0, 0, -327631, 0, 0, -327630, 0, 0, -327629, 0, 0, -327628, 0, 0, -262116, 13, 0, -262115, 0, 0, -262114, 0, 0, -262113, 0, 0, -262112, 14, 0, -262077, 0, 0, -262076, 0, 0, -262075, 0, 0, -262074, 0, 0, -262073, 0, 0, -262072, 14, 0, -196570, 13, 0, -196569, 0, 0, -196568, 14, 0, -65461, 0, 0, -65460, 0, 0, -65459, 0, 0, -65458, 0, 0, -65457, 0, 0, 131134, 13, 0, 131135, 0, 0, 131136, 0, 0, 131137, 0, 0, 131138, 0, 0, 131139, 0, 0, 131140, 0, 0, 131141, 0, 0, 131142, 0, 0, 262169, 15, 0, 262170, 0, 0, 262171, 0, 0, 262172, 8, 0, 262195, 0, 0, 262196, 0, 0, 262197, 0, 0, 262198, 0, 0, 262199, 0, 0, 262200, 0, 0, 262201, 0, 0, 262202, 5, 0, 327705, 20, 0, 327706, 20, 0, 327707, 20, 0, 327708, 20, 0, 393241, 20, 0, 393242, 20, 0, 393243, 20, 0, 393244, 20, 0, 458777, 20, 0, 458778, 20, 0, 458779, 20, 0, 458780, 20, 0, 524289, 12, 0, 524313, 20, 0, 524314, 20, 0, 524315, 20, 0, 524316, 20, 0, 589849, 20, 0, 589850, 20, 0, 589851, 20, 0, 589852, 20, 0, 655360, 15, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 8, 0, 655369, 15, 0, 655370, 0, 0, 655371, 8, 0, 655385, 20, 0, 655386, 20, 0, 655387, 20, 0, 655388, 20, 0, 655391, 13, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 655399, 0, 0, 655400, 0, 0, 655401, 0, 0, 655402, 14, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 84.0323, 292.286 )
+position = Vector2( 87.7386, 292.749 )
 
 [node name="Moving Platform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 615.469, 257.995 )
-move_speed = 0.7
-movie_distance = 150.0
+position = Vector2( 616.469, 255.145 )
+move_speed = 0.5
+movie_distance = 120.0
 move_direction = Vector2( 1, 0 )
 
+[node name="Moving Platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 635.13, -109.918 )
+move_speed = 0.5
+movie_distance = 120.0
+move_direction = Vector2( 1, 0 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 1547.61, 293.839 )
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 3.19897, 10.7132 )
+rotate = false
+
+[node name="Moving Platform" parent="Path2D/PathFollow2D" instance=ExtResource( 3 )]
+position = Vector2( 0.375244, 34.1497 )
+motion/sync_to_physics = false
+move_speed = 32.0
+movie_distance = 80.0
+
+[node name="Pie" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1264.44, -109.855 )
+
+[node name="Pie2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 857.352, 112.427 )
+
+[node name="WorldComplete" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160.832, -290.97 )
+
+[node name="icon" parent="WorldComplete" index="0"]
+position = Vector2( -9.82178, 1.22772 )
+scale = Vector2( 0.923267, 1.01918 )
+texture = ExtResource( 5 )
+
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 903.99, 94.999 )
-speed = 100
+position = Vector2( 153.788, 288.191 )
+
+[editable path="Pie"]
+
+[editable path="Pie2"]
+
+[editable path="WorldComplete"]

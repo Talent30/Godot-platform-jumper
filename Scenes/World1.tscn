@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/WorldComplete.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PNG/snow_115.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Person1.gd" type="Script" id=5]
+[ext_resource path="res://PNG/snow_113.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/StoryBox.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/squat 00.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.9494
@@ -29,12 +29,13 @@ position = Vector2( 96.4643, 293.343 )
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Person1"]
-position = Vector2( 199.954, 290.628 )
-scale = Vector2( 2.07487, 2.3501 )
-texture = ExtResource( 8 )
+position = Vector2( 196.279, 280.337 )
+scale = Vector2( 0.650649, 0.638737 )
+texture = ExtResource( 6 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Person1"]
-position = Vector2( 193.842, 288.604 )
+position = Vector2( 187.961, 288.604 )
 shape = SubResource( 1 )
 
 [node name="StoryBox" parent="Person1" instance=ExtResource( 7 )]
@@ -43,7 +44,7 @@ margin_left = -6.42352
 margin_top = 126.905
 margin_right = 444.576
 margin_bottom = 246.905
-person = ExtResource( 8 )
+person = ExtResource( 6 )
 
 [node name="WorldComplete" parent="." instance=ExtResource( 3 )]
 position = Vector2( 771.139, 255.944 )

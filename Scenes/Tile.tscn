@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://PNG/snow_36.png" type="Texture" id=1]
 [ext_resource path="res://PNG/snow_09.png" type="Texture" id=2]
@@ -23,14 +23,17 @@
 [ext_resource path="res://PNG/snow_75.png" type="Texture" id=21]
 [ext_resource path="res://PNG/snow_101.png" type="Texture" id=22]
 [ext_resource path="res://PNG/snow_100.png" type="Texture" id=23]
+[ext_resource path="res://PNG/snow_76.png" type="Texture" id=24]
+[ext_resource path="res://PNG/snow_35.png" type="Texture" id=25]
+[ext_resource path="res://PNG/snow_37.png" type="Texture" id=26]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 64.6708, 64.29 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 64.2079, 63.9878 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 64.0862, 31.938 )
 
 [node name="Tile" type="Node"]
@@ -48,7 +51,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 63.799, 64.5279 )
-shape = SubResource( 1 )
+shape = SubResource( 27 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 63.7427, 3.8147e-06 )
@@ -64,7 +67,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
 position = Vector2( 63.799, 64.5279 )
-shape = SubResource( 1 )
+shape = SubResource( 27 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( 3.8147e-06, 65.0472 )
@@ -135,7 +138,7 @@ scale = Vector2( 1, 1.00548 )
 polygon = PoolVector2Array( 0.837605, 0.729614, 127.639, 1.19617, 128.602, 22.2904, 126.015, 39.7443, 119.291, 60.2783, 112.049, 74.6522, 101.187, 88.5126, 88.7724, 102.886, 75.3235, 112.127, 60.3229, 119.827, 33.4252, 128.554, 1.35486, 128.554 )
 
 [node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 63.7427, 65.0472 )
+position = Vector2( 391.372, 240.238 )
 scale = Vector2( 0.248446, 0.248975 )
 texture = ExtResource( 1 )
 centered = false
@@ -147,6 +150,23 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite5"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite5/StaticBody2D"]
+position = Vector2( 0, -1.52588e-05 )
+scale = Vector2( 1, 1.00548 )
+polygon = PoolVector2Array( -0.0926819, -1.09631, -0.799652, 36.7344, 13.9071, 38.7246, 32.6248, 42.7052, 49.3369, 51.3298, 64.7122, 63.935, 79.4189, 81.1843, 88.1093, 101.087, 91.4517, 126.961, 128.286, 127.701, 128.753, -0.633026 )
+
+[node name="Sprite22" type="Sprite" parent="."]
+position = Vector2( 347.005, 296.549 )
+scale = Vector2( 0.248446, 0.248975 )
+texture = ExtResource( 24 )
+centered = false
+region_rect = Rect2( 1152, 768, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite22"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite22/StaticBody2D"]
 position = Vector2( 0, -1.52588e-05 )
 scale = Vector2( 1, 1.00548 )
 polygon = PoolVector2Array( -0.0926819, -1.09631, -0.799652, 36.7344, 13.9071, 38.7246, 32.6248, 42.7052, 49.3369, 51.3298, 64.7122, 63.935, 79.4189, 81.1843, 88.1093, 101.087, 91.4517, 126.961, 128.286, 127.701, 128.753, -0.633026 )
@@ -166,6 +186,21 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite6/StaticBody2D"]
 polygon = PoolVector2Array( -0.271484, -0.386414, 127.849, -0.0610962, 128.174, 37.6751, 117.09, 36.6992, 106.332, 38.6511, 96.552, 41.9042, 86.1199, 46.7839, 75.3617, 53.2902, 64.9295, 62.0736, 57.7574, 69.5558, 49.0997, 80.1392, 38.2031, 104.488, 37.5346, 129.169, 0.767731, 129.169 )
 
+[node name="Sprite23" type="Sprite" parent="."]
+position = Vector2( 270.029, 125.467 )
+scale = Vector2( 0.248446, 0.248975 )
+texture = ExtResource( 26 )
+centered = false
+region_rect = Rect2( 1152, 768, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite23"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite23/StaticBody2D"]
+polygon = PoolVector2Array( -0.271484, -0.386414, 127.849, -0.0610962, 128.174, 37.6751, 117.09, 36.6992, 106.332, 38.6511, 96.552, 41.9042, 86.1199, 46.7839, 75.3617, 53.2902, 64.9295, 62.0736, 57.7574, 69.5558, 49.0997, 80.1392, 38.2031, 104.488, 37.5346, 129.169, 0.767731, 129.169 )
+
 [node name="Sprite8" type="Sprite" parent="."]
 position = Vector2( 127.53, 96.9148 )
 scale = Vector2( 0.248446, 0.248975 )
@@ -181,7 +216,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite8/StaticBody2D"]
 position = Vector2( 63.8969, 64.0865 )
-shape = SubResource( 2 )
+shape = SubResource( 31 )
 
 [node name="Sprite9" type="Sprite" parent="."]
 position = Vector2( 191.921, 96.916 )
@@ -198,7 +233,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite9/StaticBody2D"]
 position = Vector2( 63.8969, 64.0865 )
-shape = SubResource( 2 )
+shape = SubResource( 31 )
 
 [node name="Sprite10" type="Sprite" parent="."]
 position = Vector2( 191.921, 160.101 )
@@ -214,7 +249,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite10/StaticBody2D"]
 position = Vector2( 63.8969, 64.0865 )
-shape = SubResource( 2 )
+shape = SubResource( 31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -233,7 +268,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite12/StaticBody2D"]
 position = Vector2( 63.8969, 64.0865 )
-shape = SubResource( 2 )
+shape = SubResource( 31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -252,7 +287,26 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite18/StaticBody2D"]
 position = Vector2( 63.8969, 64.0865 )
-shape = SubResource( 2 )
+shape = SubResource( 31 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite21" type="Sprite" parent="."]
+position = Vector2( 523.193, 78.3652 )
+scale = Vector2( 0.248446, 0.248975 )
+texture = ExtResource( 25 )
+centered = false
+region_rect = Rect2( 1152, 768, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite21"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite21/StaticBody2D"]
+position = Vector2( 63.8969, 64.0865 )
+shape = SubResource( 31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -271,7 +325,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite17/StaticBody2D"]
 position = Vector2( 63.8969, 64.0865 )
-shape = SubResource( 2 )
+shape = SubResource( 31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -293,7 +347,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite11/StaticBody2D"]
 position = Vector2( 63.8969, 31.8901 )
-shape = SubResource( 3 )
+shape = SubResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -315,7 +369,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite15/StaticBody2D"]
 position = Vector2( 63.8969, 31.8901 )
-shape = SubResource( 3 )
+shape = SubResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -337,7 +391,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite16/StaticBody2D"]
 position = Vector2( 63.8969, 31.8901 )
-shape = SubResource( 3 )
+shape = SubResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }

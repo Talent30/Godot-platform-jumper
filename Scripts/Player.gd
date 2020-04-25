@@ -21,7 +21,6 @@ func _physics_process(_delta):
 	if is_dead == false:
 		motion.y += GRAVITY
 		var friction = false
-		
 		if Input.is_action_pressed("ui_right"):
 			if is_attacking == false || is_on_floor() ==false:
 				motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
@@ -69,8 +68,8 @@ func _physics_process(_delta):
 	
 			if Input.is_action_just_pressed("ui_up"):
 				if on_ground == true:
-					motion.y = JUMP_HEIGHT
-					on_ground = false	
+					motion.y = JUMP_HEIGHT + get_floor_velocity().y
+					on_ground = false
 				if friction == true:
 					motion.x = lerp(motion.x, 0, 0.2)
 		else:
@@ -82,15 +81,15 @@ func _physics_process(_delta):
 					$Sprite.play("Fall")
 				if friction == true:
 					motion.x = lerp(motion.x,0,0.05)
-
-		motion = move_and_slide(motion,UP)
+		var snap = Vector2.DOWN * 32 if on_ground else Vector2.ZERO
+		motion = move_and_slide_with_snap(motion, snap ,UP)
 	else:
-	
 		motion.y += 60
 		motion = move_and_slide(motion,UP)
-		$StaticBody2D.set_deferred("disabled", true)
+		#$StaticBody2D.set_deferred("disabled", true)
 	if motion.y >1000:
 		get_tree().change_scene("res://Scenes/Dead.tscn")
+
 
 
 
@@ -104,4 +103,9 @@ func _on_Sprite_animation_finished():
 	
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Scenes/Dead.tscn")
+	get_node("/root/MainHUD").life -= 1
+	get_node("/root/MainHUD").score -= 10
+	if get_node("/root/MainHUD").life <= 0:
+		get_tree().change_scene("res://Scenes/Dead.tscn")
+	else:
+		get_tree().reload_current_scene()
