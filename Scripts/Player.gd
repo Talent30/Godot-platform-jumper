@@ -89,6 +89,8 @@ func _physics_process(_delta):
 		motion.y += 60
 		motion = move_and_slide(motion,UP)
 		$StaticBody2D.set_deferred("disabled", true)
+	if motion.y >1000:
+		get_tree().change_scene("res://Scenes/Dead.tscn")
 
 
 
@@ -102,4 +104,4 @@ func _on_Sprite_animation_finished():
 	
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	get_tree().change_scene("res://Scenes/Dead.tscn")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MainHUD.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/romulus.tres" type="DynamicFont" id=2]
 
 [node name="MainHUD" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,6 +15,7 @@ anchor_bottom = 0.0472222
 margin_left = 0.105598
 margin_right = 57.1056
 margin_bottom = -2.0
+custom_fonts/font = ExtResource( 2 )
 text = "SCORE: 0"
 align = 2
 __meta__ = {
@@ -21,10 +23,11 @@ __meta__ = {
 }
 
 [node name="Lives" type="Label" parent="HUD"]
-margin_left = 87.7969
-margin_top = 0.737423
-margin_right = 127.797
-margin_bottom = 14.7374
+margin_left = 105.046
+margin_top = 0.0740014
+margin_right = 188.046
+margin_bottom = 23.074
+custom_fonts/font = ExtResource( 2 )
 text = "Lives: 3"
 __meta__ = {
 "_edit_use_anchors_": false
